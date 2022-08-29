@@ -8,6 +8,7 @@
 
 <body>
     <?php include('./view/component.public/header.php') ?>
+    hello world!
     <?php include('./view/component.public/footer.php') ?>
 </body>
 <foot>
