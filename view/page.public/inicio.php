@@ -8,8 +8,10 @@
 
 <body>
     <?php include('./view/component.public/header.php') ?>
-    hello world! <?= $proyect['url'] ?>
-    <?php include('./view/component.public/footer.php') ?>
+    <?php include('./view/component.public/sidebar.php') ?>
+    <main>
+        hola
+    </main>
 </body>
 <foot>
     <?php include('./view/component.public/foot.php') ?>

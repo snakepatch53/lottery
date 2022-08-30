@@ -14,7 +14,7 @@ class Mysql
     }
     public function conectar()
     {
-        $this->conn = mysqli_connect("localhost", "root", "", "reservador", "3306");
+        $this->conn = mysqli_connect("localhost", "root", "", "lottery", "3306");
         mysqli_set_charset($this->conn, "utf8");
         return $this->conn;
     }
