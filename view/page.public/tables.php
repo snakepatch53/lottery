@@ -11,7 +11,7 @@
     <?php include('./view/component.public/sidebar.php') ?>
     <main>
         <!-- CONTENT PAGE | INI -->
-        <main class="pt-4 px-md-5 px-1">
+        <div class="pt-4 px-md-5 px-1">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?= $proyect['url'] ?>home">Inicio</a></li>
@@ -43,10 +43,69 @@
                     </table>
                 </div>
             </div>
-        </main>
+        </div>
         <!-- CONTENT PAGE | END -->
 
         <!-- MODAL | INI -->
+        <!-- gift | ini -->
+        <div class="modal fade" id="element-modalgift" tabindex="-1" aria-labelledby="element-modalgiftLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content needs-validation">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="element-modalgiftLabel">Premios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- form | ini -->
+                        <form class="needs-validation" id="element-giftform" action="#" method="POST" enctype="multipart/form-data" novalidate>
+                            <input type="hidden" name="lottery_table_id" value="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="validationServer01" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="validationServer01" placeholder="Gift" name="gift_name" required>
+                                    <div class="invalid-feedback">
+                                        Escribe el nombre del premio!
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationServer02" class="form-label">Imagen</label>
+                                    <input type="file" class="form-control" id="validationServer02" name="gift_img">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="validationCustom03" class="form-label">Usuario</label>
+                                    <textarea class="form-control" id="validationCustom03" rows="1" name="gift_descr" placeholder="Escribe una descripcion"></textarea>
+                                </div>
+                                <div class="col-md-12 text-end">
+                                    <button type="submit" class="btn btn-primary" onclick>Agregar</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- form | end -->
+
+                        <!-- table | ini -->
+                        <table class="table table-striped table-hover border">
+                            <thead class="bg-dark text-light">
+                                <tr>
+                                    <th class="d-none d-md-table-cell" scope="col">#</th>
+                                    <th class="text-center text-md-left" scope="col">Nombre</th>
+                                    <th class="d-none d-md-table-cell" scope="col">Imagen</th>
+                                    <th class="d-none d-md-table-cell" scope="col">Ganador</th>
+                                    <th class="text-center" scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="element-table-gift"></tbody>
+                        </table>
+                        <!-- table | end -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- gift | end -->
+
         <!-- form | ini -->
         <div class="modal fade" id="element-modalform" tabindex="-1" aria-labelledby="element-modalformLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -86,6 +145,7 @@
             </div>
         </div>
         <!-- form | end -->
+
         <!-- confirm | ini -->
         <div class="modal fade" id="element-modalconfirm" tabindex="-1" aria-labelledby="element-modalconfirmLabel" aria-hidden="true">
             <div class="modal-dialog">

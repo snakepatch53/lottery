@@ -12,13 +12,6 @@ const bootstrap_modalconfirm = new bootstrap.Modal(document.getElementById("elem
 async function main() {
     crudFunction.select();
     formInit();
-    const user = {
-        user_id: "1",
-        user_name: "Harold",
-        user_user: "snakepatch",
-        user_type: 1,
-    };
-    $element_table_user.innerHTML = uiFunction.getTrUser(user);
 }
 
 //functions

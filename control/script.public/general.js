@@ -7,4 +7,9 @@ function handleResize() {
 }
 const handleBurgerSidebar = () => document.body.classList.toggle("sidebar-minimize");
 handleResize();
-window.onresize = () => handleResize();
+window.onresize = () => {
+    handleResize();
+    if (typeof handleHeightTableGift != "undefined") {
+        handleHeightTableGift();
+    }
+};

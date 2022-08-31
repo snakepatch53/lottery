@@ -25,6 +25,7 @@ body {
 
 main {
     grid-area: main;
+    overflow-x: auto;
 }
 
 .header,
@@ -53,9 +54,37 @@ body.sidebar-minimize {
 }
 
 body.sidebar-minimize .sidebar .nav-option {
-    text-align: center !import
+    text-align: center !important;
 }
 
 body.sidebar-minimize .sidebar .nav-option span {
     display: none;
+}
+
+.gift-image-modal-table {
+    width: 40px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.td-gift {
+    padding: 0 !important;
+}
+
+.table-game {
+    height: calc(100vh - var(--header-height));
+    table-layout: fixed;
+}
+
+.marker-gift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.item-gift {
+    background: #000 !important;
 }

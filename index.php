@@ -31,10 +31,29 @@ $router->add('/tables', function () {
     include('./view/page.public/tables.php');
 }, ['GET']);
 
+$router->add('/tables/([0-9])', function ($lottery_table_id) {
+    global $proyect;
+    $currentPage = 'tables';
+    include('./model/library/table.middleware.php');
+    include('./view/page.public/table.php');
+}, ['GET']);
+
 // ERROR 404
 $router->add('/.*', function () {
     global $proyect;
-    echo "404 error";
+    $url = $proyect['url'] . "home";
+    echo "
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h3 style='text-align:center; font-family:consolas'>LUGAR NO ENCONTRADO</h3>
+        <br/>
+        <a href='$url' style='text-align:center; display:block; font-family:consolas'>Return to home</a>
+    ";
 });
 
 // EJECUTAR RUTAS

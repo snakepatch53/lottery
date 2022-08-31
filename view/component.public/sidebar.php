@@ -21,14 +21,6 @@
             <i class="fa-solid fa-table-cells"></i>
             <span class="ms-2">Tableros</span>
         </a>
-        <a href="<?= $proyect['url'] ?>gifts" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "gifts") ? "shadow active" : "" ?>">
-            <i class="fa-solid fa-gift"></i>
-            <span class="ms-2e">Premios</span>
-        </a>
-        <a href="<?= $proyect['url'] ?>game" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "game") ? "shadow active" : "" ?>">
-            <i class="fa-solid fa-gamepad"></i>
-            <span class="ms-2e">Juego</span>
-        </a>
     </ul>
     <!-- List | end -->
 
