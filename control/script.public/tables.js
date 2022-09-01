@@ -146,6 +146,8 @@ const uiFunction = {
         lottery_table_name,
         lottery_table_date,
         lottery_table_create,
+        lottery_table_rows,
+        lottery_table_columns,
         currentdate,
     }) {
         const currentDate = moment(new Date(currentdate));
@@ -157,6 +159,7 @@ const uiFunction = {
             <tr>
                 <td class="d-none d-md-table-cell fw-bold">${lottery_table_id}</td>
                 <td class="text-center text-md-left">${lottery_table_name}</td>
+                <td class="text-center text-md-left">${lottery_table_rows + " x " + lottery_table_columns}</td>
                 <td class="d-none d-md-table-cell">en ${durationEvent.humanize()}</td>
                 <td class="d-none d-md-table-cell">hace ${durationCreate.humanize()}</td>
                 <td class="text-center">

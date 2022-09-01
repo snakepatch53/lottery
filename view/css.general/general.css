@@ -11,7 +11,7 @@ body {
     grid-template-areas:
         "sidebar header"
         "sidebar main";
-    overflow: hidden;
+/*    overflow: hidden;*/
     min-height: 100vh;
 }
 
@@ -67,24 +67,6 @@ body.sidebar-minimize .sidebar .nav-option span {
     object-fit: contain;
 }
 
-.td-gift {
-    padding: 0 !important;
-}
 
-.table-game {
-    height: calc(100vh - var(--header-height));
-    table-layout: fixed;
-}
 
-.marker-gift {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    margin: 0;
-}
 
-.item-gift {
-    background: #000 !important;
-}

@@ -4,3 +4,4 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 <link rel="stylesheet" href="<?= $proyect['url'] ?>view/css.general/bootstrap.min.css">
 <link rel="stylesheet" href="<?= $proyect['url'] ?>view/css.general/general.css">
+<link rel="shortcut icon" href="<?= $proyect['url'] ?>view/img/logo.png" type="image/x-icon">

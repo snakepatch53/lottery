@@ -3,7 +3,9 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 include './../../dao/Mysql.php';
 include './../../dao/GiftDao.php';
+include './../../dao/Lottery_tableDao.php';
 $giftDao = new GiftDao();
+$lottery_tableDao = new Lottery_tableDao();
 if (isset(
     $_POST['gift_name'],
     $_POST['gift_descr'],
@@ -18,6 +20,8 @@ if (isset(
         $gift_descr,
         $lottery_table_id
     );
+
+    $lottery_tableDao->updateInit(0, $lottery_table_id);
 
     if (isset($_FILES['gift_img'])) {
         $gift_img = $_FILES['gift_img'];

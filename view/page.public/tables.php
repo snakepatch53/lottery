@@ -3,7 +3,7 @@
 
 <head>
     <?php include('./view/component.public/head.php') ?>
-    <title>Inicio</title>
+    <title>Tableros</title>
 </head>
 
 <body>
@@ -34,6 +34,7 @@
                             <tr>
                                 <th class="d-none d-md-table-cell" scope="col">#</th>
                                 <th class="text-center text-md-left" scope="col">Nombre</th>
+                                <th class="text-center text-md-left" scope="col">Tamaño</th>
                                 <th class="d-none d-md-table-cell" scope="col">Fecha</th>
                                 <th class="d-none d-md-table-cell" scope="col">Creacion</th>
                                 <th class="text-center" scope="col">Acciones</th>
@@ -128,10 +129,25 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">Usuario</label>
-                                <input type="datetime-local" class="form-control" id="validationCustom03" placeholder="@mark123" name="lottery_table_date" required>
+                                <label for="validationCustom02" class="form-label">Usuario</label>
+                                <input type="datetime-local" class="form-control" id="validationCustom02" placeholder="@mark123" name="lottery_table_date" required>
                                 <div class="invalid-feedback">
                                     Selecciona una fecha!
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="validationServer03" class="form-label">Numero de filas</label>
+                                <input type="number" class="form-control" id="validationServer03" placeholder="Minimo 2" name="lottery_table_rows" min="2" max="26" value="2" required>
+                                <div class="invalid-feedback">
+                                    Minimo 2, maximo 26!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationServer03" class="form-label">Numero de columnas</label>
+                                <input type="number" class="form-control" id="validationServer03" placeholder="Minimo 2" name="lottery_table_columns" min="2" max="26" value="2" required>
+                                <div class="invalid-feedback">
+                                    Minimo 2, maximo 26!
                                 </div>
                             </div>
                         </div>

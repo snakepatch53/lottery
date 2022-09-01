@@ -16,7 +16,11 @@ class GiftDao
     }
     public function selectByLottery_table_id($lottery_table_id)
     {
-        return $this->conn->query("SELECT * FROM gift WHERE lottery_table_id = $lottery_table_id");
+        return $this->conn->query("
+            SELECT * FROM gift
+            WHERE lottery_table_id = $lottery_table_id
+            ORDER BY RAND()
+        ");
     }
 
     public function insert(
@@ -29,6 +33,18 @@ class GiftDao
                 gift_name='$gift_name', 
                 gift_descr='$gift_descr',
                 lottery_table_id=$lottery_table_id
+        ");
+    }
+    public function updatePosition(
+        $gift_row,
+        $gift_column,
+        $gift_id
+    ) {
+        return $this->conn->query("
+            UPDATE gift SET 
+                gift_row=$gift_row,
+                gift_column=$gift_column
+            WHERE gift_id=$gift_id
         ");
     }
     function updateImg($gift_img, $gift_id)

@@ -6,7 +6,7 @@
     <div class="sidebar-header">
         <h4 class="text-truncate p-2">Lottery</h4>
     </div>
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" alt="Logo">
+    <img class="logo" src="<?= $proyect['url'] ?>view/img/logo.png" alt="Logo">
     <!-- List | ini -->
     <ul class="list-group rounded-0 p-2 border-0">
         <a href="<?= $proyect['url'] ?>home" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "home") ? "shadow  active" : "" ?>">

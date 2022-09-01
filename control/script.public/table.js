@@ -1,17 +1,54 @@
-// const $element_table = document.getElementById("element-table");
-// const $element_container_table = document.getElementById("element-container-table");
+// general declarations
+const itemsGift = document.querySelectorAll(".item-gift");
+const $formwinner = document.getElementById("formwinner");
 
-// function handleHeightTableGift() {
-//     const height = (window.innerHeight - 315) / ($lottery_table_r["lottery_table_rows"] + 2);
-//     const maxHeight = (window.innerWidth - 200) / ($lottery_table_r["lottery_table_columns"] + 2);
-//     document.querySelectorAll(".td-gift").forEach(($element, index) => {
-//         $element.style = `
-//             height: ${height}px !important;
-//             max-height: ${maxHeight}px !important;
-//         `;
-//     });
-//     $element_container_table.style = `
-//         max-width: ${window.innerHeight}px;
-//     `;
-// }
-// handleHeightTableGift();
+// instance bootstrap modals
+const modalWinner = new bootstrap.Modal(document.getElementById("modalWinner"), {
+    keyboard: true,
+    /* para bloquear salir con la tecla "esc" */
+    // keyboard: false,
+    // backdrop: "static",
+});
+
+// main function
+function main() {
+    uiFunction.formInit();
+}
+
+//functiones de manejo
+const handleFunction = {};
+
+// functiones de interfaz
+const uiFunction = {
+    formInit: function () {
+        "use strict";
+        $formwinner.onsubmit = function (event) {
+            if (!$formwinner.checkValidity()) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+            if ($formwinner.checkValidity()) {
+                event.preventDefault();
+                // crudFunction.insertUpdate($$formwinner);
+                console.log("validate!");
+            }
+
+            $formwinner.classList.add("was-validated");
+        };
+    },
+};
+
+//functiones de base de datos
+const crudFunction = {};
+
+//pediente
+itemsGift.forEach(($itemGift) => {
+    $itemGift.onclick = (evt) => $itemGift.classList.add("active");
+});
+
+var confettiSettings = { target: "canvas-confetti" };
+var confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+
+// main execute
+main();

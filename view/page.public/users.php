@@ -4,7 +4,7 @@
 
 <head>
     <?php include('./view/component.public/head.php') ?>
-    <title>Inicio</title>
+    <title>Usuarios</title>
 </head>
 
 <body>

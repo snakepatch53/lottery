@@ -7,16 +7,22 @@ $lottery_tableDao = new Lottery_tableDao();
 if (isset(
     $_POST['lottery_table_name'],
     $_POST['lottery_table_date'],
+    $_POST['lottery_table_rows'],
+    $_POST['lottery_table_columns'],
     $_POST['user_id'],
     $_POST['lottery_table_id']
 )) {
     $lottery_table_name = $_POST['lottery_table_name'];
     $lottery_table_date = $_POST['lottery_table_date'];
+    $lottery_table_rows = $_POST['lottery_table_rows'];
+    $lottery_table_columns = $_POST['lottery_table_columns'];
     $user_id = $_POST['user_id'];
     $lottery_table_id = $_POST['lottery_table_id'];
     $lottery_tableDao->update(
         $lottery_table_name,
         $lottery_table_date,
+        $lottery_table_rows,
+        $lottery_table_columns,
         $user_id,
         $lottery_table_id
     );
