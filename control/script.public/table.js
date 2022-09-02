@@ -83,7 +83,7 @@ const uiFunction = {
         $element_container_available.innerHTML = htmlExhausted;
     },
     getItemGameStatusbar: function ({ gift_img, gift_name, gift_descr, gift_winner }) {
-        let srcImg = $proyect.url + "view/img/gift_opne.png";
+        let srcImg = $proyect.url + "view/img/gift_open.png";
         let descr = gift_descr;
         if (gift_img != null && gift_img != "") srcImg = $proyect.url + "view/img/gift_img/" + gift_img;
         if (gift_winner != null && gift_winner != "") descr = `${gift_winner}`;
