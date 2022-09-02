@@ -2,7 +2,7 @@
 
 USE lottery;
 
---empresa
+-- empresa
 DROP TABLE IF EXISTS info;
 
 CREATE TABLE info (
@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
   (1, "Lottery", null);
 
---user
+-- user
 DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
@@ -40,7 +40,7 @@ VALUES
     1
   );
 
---lottery_table
+-- lottery_table
 DROP TABLE IF EXISTS lottery_table;
 
 CREATE TABLE lottery_table (

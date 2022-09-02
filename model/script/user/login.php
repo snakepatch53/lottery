@@ -2,8 +2,6 @@
 session_start();
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-include './../../../config.php';
-ob_clean();
 include './../../dao/Mysql.php';
 include './../../dao/UserDao.php';
 $userDao = new UserDao();
