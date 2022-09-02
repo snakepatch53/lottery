@@ -13,10 +13,12 @@
             <i class="fa-solid fa-house"></i>
             <span class="ms-2">Inicio</span>
         </a>
-        <a href="<?= $proyect['url'] ?>users" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "users") ? "shadow active" : "" ?>">
-            <i class="fa-solid fa-user"></i>
-            <span class="ms-2">Usuarios</span>
-        </a>
+        <?php if ($_SESSION['user_type'] == 1) { ?>
+            <a href="<?= $proyect['url'] ?>users" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "users") ? "shadow active" : "" ?>">
+                <i class="fa-solid fa-user"></i>
+                <span class="ms-2">Usuarios</span>
+            </a>
+        <?php } ?>
         <a href="<?= $proyect['url'] ?>tables" class="nav-option btn btn-outline-primary border-0 text-start p-3 mb-2 <?= ($currentPage == "tables") ? "shadow active" : "" ?>">
             <i class="fa-solid fa-table-cells"></i>
             <span class="ms-2">Tableros</span>

@@ -63,7 +63,7 @@ CREATE TABLE gift (
   gift_name VARCHAR(50),
   gift_descr TEXT,
   gift_img VARCHAR(10),
-  gift_winner VARCHAR(10),
+  gift_winner VARCHAR(100),
   gift_row INT,
   gift_column INT,
   lottery_table_id INT,

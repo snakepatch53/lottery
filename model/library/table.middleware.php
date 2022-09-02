@@ -1,5 +1,5 @@
 <?php
-include('./model/dao/Mysql.php');
+// include('./model/dao/Mysql.php');
 include('./model/dao/Lottery_tableDao.php');
 include('./model/dao/GiftDao.php');
 $lottery_tableDao = new Lottery_tableDao();
@@ -86,3 +86,8 @@ function getLetter($number)
     const $lottery_table_r = JSON.parse('<?= json_encode($lottery_table_r) ?>');
     const $gift_array = JSON.parse('<?= json_encode($gift_array) ?>');
 </script>
+<style>
+    * {
+        --table-num-rows: <?= json_encode($lottery_table_r['lottery_table_rows'] + 2) ?>;
+    }
+</style>

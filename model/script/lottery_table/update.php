@@ -27,6 +27,8 @@ if (isset(
         $lottery_table_id
     );
 
+    $lottery_tableDao->updateInit(0, $lottery_table_id);
+
     echo json_encode(true);
 } else {
     echo json_encode(false);

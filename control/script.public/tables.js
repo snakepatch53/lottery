@@ -1,6 +1,8 @@
 const forms = document.querySelectorAll(".needs-validation");
 const $form = document.getElementById("element-lotteryform");
 const $element_table_lottery = document.getElementById("element-table-lottery");
+
+// bootstrap instances
 const bootstrap_modalform = new bootstrap.Modal(document.getElementById("element-modalform"), {
     keyboard: false,
 });
@@ -16,9 +18,14 @@ const element_modalgift = new bootstrap.Modal(document.getElementById("element-m
 });
 
 async function main() {
-    await crudFunction.select();
     await crudFunction.selectGift();
+    await crudFunction.select();
     formInit();
+    // inicialice tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 }
 
 //functions
@@ -150,22 +157,31 @@ const uiFunction = {
         lottery_table_columns,
         currentdate,
     }) {
+        const gift_array = uiFunction.giftDatabase.filter((el) => el.lottery_table_id == lottery_table_id);
         const currentDate = moment(new Date(currentdate));
         const eventDate = moment(new Date(lottery_table_date));
         const creationDate = moment(new Date(lottery_table_create));
         const durationEvent = moment.duration(eventDate.diff(currentDate));
         const durationCreate = moment.duration(creationDate.diff(currentDate));
         return `
-            <tr>
+            <tr id="lottery-tr-id-${lottery_table_id}">
                 <td class="d-none d-md-table-cell fw-bold">${lottery_table_id}</td>
                 <td class="text-center text-md-left">${lottery_table_name}</td>
                 <td class="text-center text-md-left">${lottery_table_rows + " x " + lottery_table_columns}</td>
                 <td class="d-none d-md-table-cell">en ${durationEvent.humanize()}</td>
                 <td class="d-none d-md-table-cell">hace ${durationCreate.humanize()}</td>
                 <td class="text-center">
-                    <a class="btn btn-outline-dark" href="${$proyect.url}tables/${lottery_table_id}">
-                        <i class="fa-solid fa-play"></i>
-                    </a>
+                    <span 
+                        class="d-inline-block lottery-play-span" 
+                        tabindex="0" 
+                        data-bs-toggle="${gift_array.length <= 0 ? "tooltip" : ""}" 
+                        title="Inserte premios para poder empezar!">
+                        <a 
+                            class="btn btn-outline-dark lottery-play-a ${gift_array.length <= 0 ? "disabled" : ""}" 
+                            href="${$proyect.url}tables/${lottery_table_id}">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </span>
                     <button class="btn btn-outline-success" onclick="handleFunction.giftTrButton(${lottery_table_id})">
                         <i class="fa-solid fa-gift"></i>
                     </button>
@@ -218,6 +234,23 @@ const uiFunction = {
     },
     refreshTableGift: function (lottery_table_id) {
         const gifts = uiFunction.giftDatabase.filter((el) => el.lottery_table_id == lottery_table_id);
+        const $lottery_tr = document.getElementById("lottery-tr-id-" + lottery_table_id);
+        const $lottery_span = $lottery_tr.querySelector(".lottery-play-span");
+        const $lottery_a = $lottery_tr.querySelector(".lottery-play-a");
+
+        const lottery_button_a = new bootstrap.Button($lottery_a);
+        const lottery_tooltip_span = new bootstrap.Tooltip($lottery_span, {
+            boundary: document.body,
+        });
+        if (gifts.length <= 0) {
+            // disable button, enable tooltip
+            lottery_tooltip_span.enable();
+            $lottery_a.classList.add("disabled");
+        } else {
+            // enable button, disable tooltip
+            lottery_tooltip_span.disable();
+            $lottery_a.classList.remove("disabled");
+        }
         let html = "";
         for (let gift of gifts) {
             html += this.getTrGift(gift);

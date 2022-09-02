@@ -1,4 +1,6 @@
 <?php
+include './../../../config.php';
+ob_clean();
 include './../../dao/Mysql.php';
 include './../../dao/GiftDao.php';
 $giftDao = new GiftDao();

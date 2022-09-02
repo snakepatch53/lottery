@@ -13,3 +13,9 @@ window.onresize = () => {
         handleHeightTableGift();
     }
 };
+
+function logout() {
+    fetch_query(null, "user", "logout").then((res) => {
+        if (res) return (location.href = $proyect.url);
+    });
+}

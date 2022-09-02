@@ -11,7 +11,7 @@ body {
     grid-template-areas:
         "sidebar header"
         "sidebar main";
-/*    overflow: hidden;*/
+    overflow: hidden;
     min-height: 100vh;
 }
 

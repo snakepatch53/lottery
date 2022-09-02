@@ -112,7 +112,7 @@
             <div class="modal-dialog">
                 <form class="modal-content needs-validation" id="element-lotteryform" onsubmit="return false" novalidate>
                     <input type="hidden" name="lottery_table_id" value="0">
-                    <input type="hidden" name="user_id" value="1"> <!-- PEDIENTE POR CAMBIAR -->
+                    <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>"> <!-- PEDIENTE POR CAMBIAR -->
                     <div class="modal-header">
                         <h5 class="modal-title" id="element-modalformLabel">Formulario</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
