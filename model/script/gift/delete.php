@@ -1,6 +1,6 @@
 <?php
-include './../../../config.php';
-ob_clean();
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
 include './../../dao/Mysql.php';
 include './../../dao/GiftDao.php';
 $giftDao = new GiftDao();
