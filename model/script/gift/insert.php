@@ -21,6 +21,7 @@ if (isset(
         $lottery_table_id
     );
 
+    $giftDao->updateGift_winnerByLottery_table_id('', $lottery_table_id);
     $lottery_tableDao->updateInit(0, $lottery_table_id);
 
     if (isset($_FILES['gift_img'])) {

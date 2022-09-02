@@ -47,6 +47,16 @@ class GiftDao
             WHERE gift_id=$gift_id
         ");
     }
+    public function updateGift_winnerByLottery_table_id(
+        $gift_winner,
+        $lottery_table_id
+    ) {
+        return $this->conn->query("
+            UPDATE gift SET 
+                gift_winner='$gift_winner'
+            WHERE lottery_table_id=$lottery_table_id
+        ");
+    }
     function updateImg($gift_img, $gift_id)
     {
         return $this->conn->query("

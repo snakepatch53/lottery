@@ -3,7 +3,9 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 include './../../dao/Mysql.php';
 include './../../dao/Lottery_tableDao.php';
+include './../../dao/GiftDao.php';
 $lottery_tableDao = new Lottery_tableDao();
+$giftDao = new GiftDao();
 if (isset(
     $_POST['lottery_table_name'],
     $_POST['lottery_table_date'],
@@ -26,7 +28,7 @@ if (isset(
         $user_id,
         $lottery_table_id
     );
-
+    $giftDao->updateGift_winnerByLottery_table_id('', $lottery_table_id);
     $lottery_tableDao->updateInit(0, $lottery_table_id);
 
     echo json_encode(true);
