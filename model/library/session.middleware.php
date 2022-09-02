@@ -1,6 +1,6 @@
 <?php
 include('./model/dao/Mysql.php');
-session_start();
+// session_start();
 if ($currentPage == "login") {
     if (isset($_SESSION['user_id'])) header('location: ./');
 } else {

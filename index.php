@@ -1,6 +1,8 @@
 <?php
-// ob_start();
+ob_start();
+session_start();
 include('./config.php');
+
 // include('./model/library/initialProcess.php');
 
 // if ($_SERVER['HTTPS'] != "on" or strpos($_SERVER['HTTP_HOST'], 'www') !== false) {
