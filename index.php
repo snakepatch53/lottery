@@ -43,7 +43,7 @@ $router->add('/tables', function () {
     include('./view/page.public/tables.php');
 }, ['GET']);
 
-$router->add('/tables/([0-9])', function ($lottery_table_id) {
+$router->add('/tables/([0-9]+)', function ($lottery_table_id) {
     global $proyect;
     $currentPage = 'tables';
     include('./model/library/session.middleware.php');
